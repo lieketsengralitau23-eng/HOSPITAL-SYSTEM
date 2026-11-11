@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appointments - Bophelo Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadStaffAppointments()">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="staffwrap">
+    <aside class="side">
+      <div class="brandrow"><span class="logo" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 26h9l5-12 7 24 5-16 3 4h9"/></svg></span><div><b>Bophelo Link</b><small>Staff portal</small></div></div>
+      <nav aria-label="Staff menu">
+        <a href="staff-schedule.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Schedule</span></a>
+        <a href="staff-appointments.html" class="on" aria-current="page"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Appointments</span></a>
+        <a href="staff-patients.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Patients</span></a>
+        <a href="staff-notifications.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg><span>Notifications</span></a>
+      </nav>
+      <div class="me"><span class="avatar" aria-hidden="true">KN</span><div>Karabo Nau<small>Appointment Administrator</small></div><button onclick="staffLogout()">Log out</button></div>
+    </aside>
+    <main id="main" class="main">
+      <header>
+        <div><h1>Appointments</h1><p>Search, reschedule or cancel bookings</p></div>
+        <a href="staff-notifications.html" class="bellbtn" style="background:#fff;color:var(--ink);border:1px solid var(--line)" aria-label="Sent notifications"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></a>
+      </header>
+      <div class="toolbar">
+        <label class="sr" for="staffSearch">Search patient or doctor</label><input id="staffSearch" class="sfield" type="search" placeholder="Search patient or doctor" oninput="drawAppointments()">
+        <div role="group" aria-label="Filter appointments" style="display:flex;gap:8px">
+          <button class="chip on" id="chipAll" aria-pressed="true" onclick="setFilter('All', this)">All</button>
+          <button class="chip" aria-pressed="false" onclick="setFilter('Today', this)">Today</button>
+          <button class="chip" aria-pressed="false" onclick="setFilter('Upcoming', this)">Upcoming</button>
+          <button class="chip" aria-pressed="false" onclick="setFilter('Cancelled', this)">Cancelled</button>
+        </div>
+      </div>
+      <table class="tbl"><caption class="sr">Appointments</caption>
+        <thead><tr><th scope="col">Patient</th><th scope="col">Doctor</th><th scope="col">Date and time</th><th scope="col">Status</th><th scope="col">Actions</th></tr></thead>
+        <tbody id="apptRows"></tbody></table>
+      <section id="reschedPanel" class="hidden" aria-labelledby="rt">
+        <h2 id="rt">Reschedule appointment - <span id="reschedName"></span></h2>
+        <div class="grid3">
+          <div><label class="lbl" for="newDate">New date</label><select id="newDate" class="sselect" style="width:100%%" onchange="reschedDateChanged()"></select></div>
+          <div><label class="lbl" for="newTime">New time</label><select id="newTime" class="sselect" style="width:100%%"></select></div>
+          <div><label class="lbl" for="reason">Reason (optional)</label><input id="reason" class="sfield" type="text" placeholder="e.g. Doctor unavailable"></div>
+        </div>
+        <label class="check"><input type="checkbox" id="notify" checked> Notify patient automatically by SMS and app</label>
+        <p class="errbox" id="error" role="alert"></p>
+        <div class="row" style="justify-content:flex-end"><button class="sbtn" onclick="saveReschedule()">Save changes</button><button class="sbtn outline" onclick="discardReschedule()">Discard</button></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book appointment - Bophelo Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mid" onload="loadBook()">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="phone">
+    <div class="statusbar" aria-hidden="true"><span>9:41</span><span>5G</span></div>
+    <div class="topbar"><a class="back" href="javascript:history.back()" aria-label="Go back"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a><h1 id="pageTitle">Book appointment</h1></div>
+    <div class="stepper"><div class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i></div><p>Step 2 of 3 &middot; Choose date and time</p></div>
+    <main id="main" class="content nopad-top">
+      <div class="card" id="docCard"></div>
+      <div class="row" style="justify-content:space-between"><h2 style="font-size:16px">Select date</h2><span class="muted" id="month" style="font-size:13px"></span></div>
+      <div class="dates" id="dates" role="group" aria-label="Choose a date"></div>
+      <h2 style="font-size:16px">Select time</h2>
+      <div class="times" id="times" role="group" aria-label="Choose a time"></div>
+      <div class="key" aria-hidden="true"><span><i></i>Available</span><span><i class="sel"></i>Selected</span><span><i class="bk"></i>Booked</span></div>
+    </main>
+    <div class="bottombar"><p id="choice" role="status" aria-live="polite"></p><button class="btn" id="continueBtn" onclick="continueBooking()" disabled>Continue</button></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

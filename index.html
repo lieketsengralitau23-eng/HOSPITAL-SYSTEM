@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in - Bophelo Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth" onload="loadLogin()">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="phone">
+    <div class="statusbar" aria-hidden="true"><span>9:41</span><span>5G</span></div>
+    <main id="main">
+      <header class="hero"><span class="logo" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 26h9l5-12 7 24 5-16 3 4h9"/></svg></span><h1>Bophelo Link</h1><p>Book hospital visits without the queue</p></header>
+      <div class="content">
+        <h2>Welcome back</h2>
+        <p class="muted">Log in to book and manage your appointments.</p>
+        <form onsubmit="return doLogin()" novalidate>
+          <label class="lbl" for="who">Patient Name</label>
+          <div class="field"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><input id="who" type="text" autocomplete="username" placeholder="Enter your name"></div>
+      <label class="lbl" for="password">Password</label>
+      <div class="field">
+        <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password">
+        <button type="button" class="show" onclick="togglePassword('password', this)" aria-label="Show password">Show</button>
+      </div>
+          <div class="row" style="justify-content:space-between">
+            <label class="check"><input type="checkbox" id="remember"> Remember me</label>
+            <a class="linkbtn" href="reset.html" style="display:flex;align-items:center">Forgot password?</a>
+          </div>
+          <p class="errbox" id="error" role="alert"></p>
+          <button class="btn" type="submit">Log in</button>
+        </form>
+        <p class="center muted">or</p>
+        <a class="btn outline" href="register.html" style="margin-top:0">Create an account</a>
+        <a class="card help" href="help.html" style="margin-top:14px"><span class="ic"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>No smartphone or need help?</b><br>Request assisted booking &rsaquo;</div></a>
+        <p class="center"><a class="linkbtn" href="staff-login.html" style="display:inline-flex;align-items:center">Hospital staff? <br> Log in here</a></p>
+        
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirm booking - Bophelo Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="narrow" onload="loadConfirm()">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="phone">
+    <div class="statusbar" aria-hidden="true"><span>9:41</span><span>5G</span></div>
+    <div class="topbar"><a class="back" href="javascript:history.back()" aria-label="Go back"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a><h1 id="pageTitle">Confirm booking</h1></div>
+    <div class="stepper"><div class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div><p>Step 3 of 3 &middot; Review and confirm</p></div>
+    <main id="main" class="content nopad-top">
+      <div class="card" id="summary"></div>
+      <h2 style="font-size:16px;margin-top:6px">Reminders</h2>
+      <p class="muted" style="margin:2px 0 8px;font-size:13px">Choose how we should remind you.</p>
+      <div>
+        <label class="switchrow" for="remSms">SMS reminder <input type="checkbox" class="switch" id="remSms" checked></label>
+        <label class="switchrow" for="remApp">App notification <input type="checkbox" class="switch" id="remApp" checked></label>
+        <label class="switchrow" for="remEmail">Email <input type="checkbox" class="switch" id="remEmail"></label>
+      </div>
+      <label class="lbl" for="remWhen">Send reminder</label>
+      <div class="field"><select id="remWhen"><option>1 week before</option><option selected>1 day before</option><option>2 hours before</option></select></div>
+    </main>
+    <div class="bottombar"><button class="btn" id="confirmBtn" onclick="confirmBooking()">Confirm appointment</button></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

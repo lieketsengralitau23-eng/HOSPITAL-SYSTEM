@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Need help booking - Bophelo Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="narrow" onload="loadHelp()">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="phone">
+    <div class="statusbar" aria-hidden="true"><span>9:41</span><span>5G</span></div>
+    <div class="topbar"><a class="back" id="backLink" href="index.html" aria-label="Go back"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a><h1>Need help booking?</h1></div>
+    <main id="main" class="content nopad-top">
+      <p class="muted" style="margin-top:0">Choose the option that works best for you.</p>
+      <section class="card" aria-labelledby="h1"><div class="head"><span class="avatar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div class="grow"><h2 class="t" id="h1">Request a call-back</h2><span class="muted">A staff member will call you to book.</span></div></div>
+        <form onsubmit="return requestCallback()" novalidate>
+          <label class="lbl" for="cbPhone">Phone number</label>
+          <div class="field"><input id="cbPhone" type="tel" autocomplete="tel" placeholder="+266 5XXX XXXX"></div>
+          <label class="lbl" for="cbTime">Best time to call</label>
+          <div class="field"><select id="cbTime"><option>Morning (08:00 - 12:00)</option><option>Afternoon (12:00 - 16:00)</option></select></div>
+          <p class="errbox" id="error" role="alert"></p>
+          <button class="btn" type="submit" style="margin-top:6px">Request call-back</button>
+        </form></section>
+      <section class="card" aria-labelledby="h2"><div class="head"><span class="avatar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 21v-5h6v5M9 8h.01M15 8h.01M9 12h.01M15 12h.01"/></svg></span><div class="grow"><h2 class="t" id="h2">Visit the help desk</h2><span class="muted">Mon - Fri, 08:00 - 16:30<br>Staff will book for you in person.</span></div></div></section>
+      <section class="card" aria-labelledby="h3"><div class="head"><span class="avatar amber"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-5.5 7-5.5s7 2 7 5.5"/><path d="M16 5a3.5 3.5 0 0 1 0 7M18 15c2.5.6 4 2.2 4 5"/></svg></span><div class="grow"><h2 class="t" id="h3">Ask someone to help</h2><span class="muted">Share a booking link with a family member or caregiver.</span></div></div>
+        <button class="btn outline small" style="margin-top:12px" onclick="shareLink()"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></svg> Share link</button></section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
